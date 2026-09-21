@@ -27,9 +27,13 @@ namespace Sandbox.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<TaskModel>> GetTasks(Guid userId)
+        public async Task<IEnumerable<TaskModel>> GetTasks(Guid userId, int pageIndex, int pageSize = 10)
         {
-            return await _context.Tasks.Where(t => t.UserId == userId).ToListAsync();
+            return await _context.Tasks
+                .Where(t => t.UserId == userId && t.DeletedAt == null)
+                .Skip(pageIndex * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
         }
 
         public async Task<TaskModel> GetTaskById(Guid id, Guid userId)

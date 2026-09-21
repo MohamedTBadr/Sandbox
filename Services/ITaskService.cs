@@ -11,7 +11,7 @@ namespace Sandbox.Services
     public interface ITaskService
     {
         Task CreateTask(CreateTaskRequest request, Guid UserId);
-        Task<IEnumerable<TaskModel>> GetTasks(Guid userId);
+        Task<IEnumerable<TaskModel>> GetTasks(Guid userId,int pageIndex,int pageSize=10);
         Task<TaskModel> GetTaskById(Guid id,Guid userId);
         Task UpdateTask(Guid id, UpdateTaskRequest request, Guid userId);
         Task DeleteTask(Guid id ,Guid userId);

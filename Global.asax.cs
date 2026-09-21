@@ -20,6 +20,8 @@ namespace Sandbox
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutofacConfig.RegisterDependencies();
+            SerilogConfig.Configure();
+
         }
     }
 }
