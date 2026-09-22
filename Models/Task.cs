@@ -17,6 +17,9 @@ namespace Sandbox.Models
 
         public Guid UserId { get; private set; }
 
+    
+        public byte[] RowVersion { get; private set; }
+
 
         protected Task() { }
 
@@ -96,5 +99,4 @@ namespace Sandbox.Models
             Deadline = deadline;
         }
     }
-}
 }

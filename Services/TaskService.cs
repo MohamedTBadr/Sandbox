@@ -42,11 +42,15 @@ namespace Sandbox.Services
             return await _context.Tasks.FirstOrDefaultAsync(t => t.Id == id && t.UserId == userId);
         }
 
-        public async Task UpdateTask(Guid id, UpdateTaskRequest request, Guid userId)
+    
+        public async Task UpdateTask(Guid id, UpdateTaskRequest request, Guid userId, byte[] rowVersion)
         {
             var task = await _context.Tasks.FirstOrDefaultAsync(t => t.Id == id && t.UserId == userId);
             if (task != null)
             {
+                _context.Entry(task)
+                 .Property(t => t.RowVersion)
+                  .OriginalValue = rowVersion;
                 task.Update(request.Name, request.Description, request.Deadline);
                 await _context.SaveChangesAsync();
             }

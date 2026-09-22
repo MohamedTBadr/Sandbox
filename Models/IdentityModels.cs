@@ -30,6 +30,13 @@ namespace Sandbox.Models
         {
             return new ApplicationDbContext();
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Task>()
+                .Property(t => t.RowVersion)
+                .IsRowVersion();
+            base.OnModelCreating(modelBuilder);
+        }
         public DbSet<Task> Tasks { get; set; }
     }
 }

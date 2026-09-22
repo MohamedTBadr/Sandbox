@@ -248,6 +248,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Attributes\ETagAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="DTOs\CreateTaskRequest.cs" />
@@ -255,6 +256,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\CorrelationIdHandler.cs" />
+    <Compile Include="Handlers\GlobalExceptionHandler.cs" />
     <Compile Include="Migrations\202609211433183_InitialCreate.cs" />
     <Compile Include="Migrations\202609211433183_InitialCreate.Designer.cs">
       <DependentUpon>202609211433183_InitialCreate.cs</DependentUpon>
@@ -262,6 +265,14 @@
     <Compile Include="Migrations\202609211529055_ChangeDeadlineDataType.cs" />
     <Compile Include="Migrations\202609211529055_ChangeDeadlineDataType.Designer.cs">
       <DependentUpon>202609211529055_ChangeDeadlineDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202609212211086_CatchUp.cs" />
+    <Compile Include="Migrations\202609212211086_CatchUp.Designer.cs">
+      <DependentUpon>202609212211086_CatchUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202609222007395_RowVersion.cs" />
+    <Compile Include="Migrations\202609222007395_RowVersion.Designer.cs">
+      <DependentUpon>202609222007395_RowVersion.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -358,6 +369,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202609211529055_ChangeDeadlineDataType.resx">
       <DependentUpon>202609211529055_ChangeDeadlineDataType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202609212211086_CatchUp.resx">
+      <DependentUpon>202609212211086_CatchUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202609222007395_RowVersion.resx">
+      <DependentUpon>202609222007395_RowVersion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

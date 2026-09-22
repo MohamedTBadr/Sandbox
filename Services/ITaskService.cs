@@ -13,7 +13,7 @@ namespace Sandbox.Services
         Task CreateTask(CreateTaskRequest request, Guid UserId);
         Task<IEnumerable<TaskModel>> GetTasks(Guid userId,int pageIndex,int pageSize=10);
         Task<TaskModel> GetTaskById(Guid id,Guid userId);
-        Task UpdateTask(Guid id, UpdateTaskRequest request, Guid userId);
+        Task UpdateTask(Guid id, UpdateTaskRequest request, Guid userId, byte[] rowVersion);
         Task DeleteTask(Guid id ,Guid userId);
     }
 }
