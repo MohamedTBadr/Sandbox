@@ -1,4 +1,5 @@
-﻿using Sandbox.App_Start;
+﻿using Autofac;
+using Sandbox.App_Start;
 using Serilog;
 using System;
 using System.Collections.Generic;

@@ -13,6 +13,7 @@ namespace Sandbox.Services
 {
     public class TaskService : ITaskService
     {
+        public event EventHandler<TaskEventArgs> TaskCreated;
         private readonly ApplicationDbContext _context;
 
         public TaskService(ApplicationDbContext context)
@@ -25,6 +26,7 @@ namespace Sandbox.Services
             var task = TaskModel.Create(request.Name, request.Description, request.Deadline,UserId);
             _context.Tasks.Add(task);
             await _context.SaveChangesAsync();
+            OnTaskCreated(task);
         }
 
         public async Task<IEnumerable<TaskModel>> GetTasks(Guid userId, int pageIndex, int pageSize = 10)
@@ -68,5 +70,11 @@ namespace Sandbox.Services
         }
 
 
+
+
+        protected virtual void OnTaskCreated(TaskModel task)
+        {
+            TaskCreated?.Invoke(this, new TaskEventArgs(task));
+        }
     }
 }

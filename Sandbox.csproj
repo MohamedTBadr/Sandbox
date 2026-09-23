@@ -214,6 +214,7 @@
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\EventConsumerRegistration.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -249,6 +250,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Attributes\ETagAttribute.cs" />
+    <Compile Include="Consumers\AuditConsumer.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="DTOs\CreateTaskRequest.cs" />
@@ -284,6 +286,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Services\ITaskService.cs" />
+    <Compile Include="Services\TaskEventArgs.cs" />
     <Compile Include="Services\TaskService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
